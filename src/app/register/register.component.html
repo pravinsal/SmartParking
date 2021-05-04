@@ -1,0 +1,71 @@
+<div class="login-area">
+    <div class="main-content- h-100vh">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="hero">
+                    <div class="cube"></div>
+                    <div class="cube"></div>
+                    <div class="cube"></div>
+                    <div class="cube"></div>
+                    <div class="cube"></div>
+                    <div class="cube"></div>
+                </div>
+                <div class="col-sm-10 col-md-8 col-lg-5">
+                    <!-- Middle Box -->
+                    <div class="middle-box">
+                        <div class="card">
+                            <div class="card-body p-4">
+
+                                <!-- Logo -->
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <h4 class="font-24 mb-30">Register</h4>
+                                    <h3 class="font-15 mb-20">Prisma Smart Parking</h3>  
+                                    <img width="40%" src="../../assets/img/logo.png">
+                                </div>
+                                
+                                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                        <!-- <label for="username">Username</label> -->
+                                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Name"/>
+                                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                            <div *ngIf="f.username.errors.required">Name is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="username">Username</label> -->
+                                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Email"/>
+                                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                            <div *ngIf="f.username.errors.required">Email is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="username">Username</label> -->
+                                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Phone"/>
+                                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                            <div *ngIf="f.username.errors.required">Phone is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="password">Password</label> -->
+                                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"/>
+                                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                            <div *ngIf="f.password.errors.required">Password is required</div>
+                                        </div>
+                                    </div>
+                                    <button [disabled]="loading" class="btn btn-primary btn-block">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Register
+                                    </button>
+                                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                                </form>
+
+                                <!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
